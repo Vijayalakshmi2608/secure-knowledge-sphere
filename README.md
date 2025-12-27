@@ -1,73 +1,156 @@
-# Welcome to your Lovable project
+FraudShieldAI — Privacy-Preserving, Encrypted Fraud Detection
 
-## Project info
+FraudShieldAI is a real-time, privacy-preserving fraud detection framework powered by CyborgDB’s encrypted vector search. It enables fraud analytics on sensitive financial data without exposing raw values or embeddings, protecting against vector-inversion and data-exfiltration attacks.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Traditional fraud systems operate on plaintext data and embeddings — making them vulnerable to leakage. FraudShieldAI ensures end-to-end encryption, including during computation, indexing, and querying.
 
-## How can I edit this code?
+🚀 Key Capabilities
 
-There are several ways of editing your application.
+🔐 Encryption-in-use — embeddings encrypted client-side, never stored in plaintext
 
-**Use Lovable**
+⚡ Real-time anomaly detection with sub-second latency
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+🧠 Local/private encoder (LLM or custom model) — no data leaves your environment
 
-Changes made via Lovable will be committed automatically to this repo.
+🔎 Encrypted vector similarity search via CyborgDB
 
-**Use your preferred IDE**
+📊 Auditable & explainable alerts
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🧾 Compliance-aligned (PCI-DSS, GDPR principles, least-privilege access)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🧩 Architecture Overview
 
-Follow these steps:
+1️⃣ Data Stream → ingest transactions (amount, merchant, geo, timestamp, etc.)
+2️⃣ Embedding Encoder → convert into numerical embeddings locally
+3️⃣ Client-side Encryption → encrypt vectors before storage
+4️⃣ CyborgDB Encrypted Index → store + search without decryption
+5️⃣ Anomaly Engine → detect suspicious behavior using thresholds + similarity
+6️⃣ Secure Alerts & Dashboard → encrypted logs + analyst visibility
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🎯 Objectives
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Build a production-ready encrypted fraud detection pipeline
 
-# Step 3: Install the necessary dependencies.
-npm i
+Validate CyborgDB performance at 100K–1M+ vectors
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Measure latency, encryption overhead, and accuracy
 
-**Edit a file directly in GitHub**
+Provide actionable feedback on encryption-in-use
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Deliver explainable, auditable fraud decisions
 
-**Use GitHub Codespaces**
+🛠️ Implementation Plan
+1️⃣ Data Ingestion & Feature Extraction
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Simulated or live financial transactions
 
-## What technologies are used for this project?
+Feature engineering → transaction → embedding
 
-This project is built with:
+Lightweight transformer / custom encoder
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+2️⃣ Encrypted Indexing (CyborgDB)
 
-## How can I deploy this project?
+Encrypt embeddings client-side
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Insert into CyborgDB encrypted indexes
 
-## Can I connect a custom domain to my Lovable project?
+Enable secure vector similarity search
 
-Yes, you can!
+3️⃣ Fraud Detection API
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Query historical similarity patterns
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Detect anomalies in real-time
+
+Return encrypted alerts + risk scores
+
+4️⃣ Feedback Loop
+
+Retrain with labeled fraud events
+
+Versioned encrypted indexes for auditability
+
+5️⃣ Benchmarking CyborgDB
+
+Latency, throughput, scale
+
+Continuous insert + query workloads
+
+Edge-case + failure testing
+
+6️⃣ Dashboard & Visualization
+
+Secure alerts view
+
+Encrypted audit logs
+
+Trends, metrics & explainability
+
+📦 Tech Stack
+
+CyborgDB — encrypted vector search
+
+Python — orchestration + APIs
+
+FastAPI / Flask — FraudShieldAI API
+
+PyTorch / Transformers — custom/local encoder
+
+Docker + K8s (optional) — deployment
+
+React / Next.js — secure dashboard
+
+🔐 Security & Compliance
+
+Client-side encryption for embeddings
+
+Principle of least privilege
+
+No raw data leaves local environment
+
+Encryption-in-use to prevent vector inversion
+
+Audit logs for every detection event
+
+Designed with privacy-first principles inspired by PCI-DSS & GDPR best practices.
+📊 Metrics & Expected Results
+
+FraudShieldAI aims to demonstrate:
+
+⏱️ < 1s detection latency
+
+🔎 High-precision anomaly detection
+
+🧮 Minimal encryption overhead
+
+📈 Stable performance at 1M+ encrypted vectors
+
+Deliverables include:
+
+Benchmark reports
+
+Edge-case evaluations
+
+Optimization recommendations for CyborgDB
+
+🌍 Applications
+
+Banks & FinTech fraud monitoring
+
+Payment gateway anomaly detection
+
+Insurance & lending risk analysis
+
+Enterprise user-behavior monitoring
+
+🔭 Post-Hackathon Roadmap
+
+☁️ Cloud-ready deployment (AWS / GCP / Azure, K8s)
+
+🔌 REST + GraphQL APIs
+
+🤝 Partnerships with payment networks
+
+📄 Research publication on encrypted vector search
+
+💼 SaaS productization with CyborgDB Enterprise
